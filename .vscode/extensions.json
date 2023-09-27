@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "ms-vscode.cpptools-extension-pack",
+        "danielpinto8zz6.c-cpp-compile-run",
+        "vivaxy.vscode-conventional-commits",
+        "cschlosser.doxdocgen",
+        "editorconfig.editorconfig"
+    ]
+}
