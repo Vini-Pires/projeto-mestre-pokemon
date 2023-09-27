@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "readme",
-        "extensão"
+        "extensão",
+        "config"
     ]
 }
