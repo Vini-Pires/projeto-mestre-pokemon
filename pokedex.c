@@ -1,35 +1,36 @@
-#include "pokedex.h"
+/* #include "pokedex.h"
 
-/*
-Para gerenciar a Pokedex, defina uma estrutura Pokémon contendo: número (inteiro), nome (texto), tipo1 (texto), tipo2 (texto), total (inteiro), ataque (inteiro), defesa (inteiro), ataque especial (inteiro) , defesa especial (inteiro), velocidade (inteiro), geração (inteiro), lendário (boleano), cor (texto), altura (real), peso (real), taxa de captura (inteiro), próxima evolução (inteiro), pŕe-evolução (inteiro). Deverá permitir cadastrar (inserir/listar/pesquisar/alterar/excluir) os Pokémons disponíveis para serem capturados. Essa relação deve aumentar e diminuir dinamicamente.
-*/
+//************************************************************************************
 
+void cadastrarPokemon(struct Pokemon *pokedex, int *numPokemons, FILE *file) {
+    if (*numPokemons < MAXIMO_DE_POKEMONS) {
+        
+        fscanf(file, "%d,%49[^,],%19[^,],%19[^,],%d,%d,%d,%d,%d,%d,%d,%d,%d,%19[^,],%f,%f,%d,%d,%d\n",
+               &pokedex[*numPokemons].numero, pokedex[*numPokemons].nome, pokedex[*numPokemons].tipo1,
+               pokedex[*numPokemons].tipo2, &pokedex[*numPokemons].total, &pokedex[*numPokemons].ataque,
+               &pokedex[*numPokemons].defesa, &pokedex[*numPokemons].ataqueEspecial,
+               &pokedex[*numPokemons].defesaEspecial, &pokedex[*numPokemons].velocidade,
+               &pokedex[*numPokemons].geracao, &pokedex[*numPokemons].lendario, pokedex[*numPokemons].cor,
+               &pokedex[*numPokemons].altura, &pokedex[*numPokemons].peso, &pokedex[*numPokemons].taxaCaptura,
+               &pokedex[*numPokemons].proximaEvolucao, &pokedex[*numPokemons].preEvolucao);
 
-
-
-
-
-
-// Função para inserir um Pokemon no vetor
-void inserir_pokemon(struct Pokemon **vetor, int *tamanho, struct Pokemon **novo_vetor) {
-
-    // Aumentando o tamanho do vetor em uma unidade
-    (*tamanho)++;
-
-    // Alocando memória para o novo vetor
-    struct Pokemon *novo_vetor = (struct Pokemon *) malloc((*tamanho) * sizeof(struct Pokemon));
-
-    // Copiando os elementos do vetor antigo para o novo
-    for (int i = 0; i < (*tamanho) - 1; i++) {
-        novo_vetor[i] = (*vetor)[i];
+        (*numPokemons)++;
+        printf("Pokemon cadastrado com sucesso!\n");
+    } else {
+        printf("Pokedex cheia. Impossível cadastrar mais Pokémons.\n");
     }
-    // Inserindo o novo Pokemon na última posição do vetor
-    novo_vetor[(*tamanho) - 1] = novo_vetor;
-
-    // Liberando a memória do vetor antigo
-    free(*vetor);
-
-    // Atualizando o ponteiro do vetor para apontar para o novo vetor
-    *vetor = novo_vetor;
 }
 
+// ******************************************************************************** //
+
+void listarPokemons(const struct Pokemon *pokedex, int numPokemons) {
+    if (numPokemons > 0) {
+        // listar todos os Pokémons, ou uma certa quantidade na tela
+        for (int i = 0; i < numPokemons; i++) {
+            printf("Número: %d, Nome: %s, Tipo1: %s, Tipo2: %s\n", pokedex[i].numero, pokedex[i].nome, pokedex[i].tipo1, pokedex[i].tipo2);
+        }
+    } else {
+        printf("Pokedex vazia. Nenhum Pokémon cadastrado.\n");
+    }
+}
+*/

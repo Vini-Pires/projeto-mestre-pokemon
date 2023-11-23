@@ -1,8 +1,12 @@
 // Pokedex
 
-#ifndef POKEDEX_H
-#define POKEDEX_H
 
+//#ifndef POKEDEX_H
+//#define POKEDEX_H
 
-void inserir_pokemon(struct Pokemon **vetor, int *tamanho, struct Pokemon **novo_vetor);
-#endif
+//void cadastrarPokemon(struct Pokemon *pokedex, int *numPokemons, FILE *file);
+
+//void listarPokemons(const struct Pokemon *pokedex, int numPokemons);
+
+//#endif
+
