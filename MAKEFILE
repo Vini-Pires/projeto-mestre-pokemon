@@ -1,0 +1,13 @@
+// teste
+
+main: main.o
+  @echo "gerando arquivo executavel"
+
+main.: main.c
+  gcc -c *.c
+
+clean:
+  rm -f *.o main
+
+run:
+  ./main

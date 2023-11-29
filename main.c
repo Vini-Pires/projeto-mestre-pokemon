@@ -14,6 +14,9 @@ typedef struct {
 int main() {
     Pokemon *pokedex = (Pokemon*) malloc(721 * sizeof(Pokemon));
     int numPokemons = 721;
+    int decisaoPlayer;
+    int pokemonsPlayer;
+    int pokemonInimigo;
 
     FILE *arquivoCSV = fopen("pokedex.csv", "r");
     if (arquivoCSV == NULL) {
@@ -42,7 +45,22 @@ int main() {
 
     fclose(arquivoBinario);
 
+    printf("Bem-vindo ao jogo!");
+
+    printf("digite 1 para jogar, ou qualquer outra tecla para jogar.");
+    scanf("%d", &decisaoPlayer);
+
+  if (decisaoPlayer != 1){exit(EXIT_FAILURE);}
   
+  srand(time(NULL));
+
+    pokemonsPlayer = rand() % 722;
+    pokemonInimigo = rand() % 722;
+
+    printf("Seu pokemon é: \n");
+     printf("Número: %d, Nome: %s, Tipo1: %s, Tipo2: %s\n", pokedex[pokemonsPlayer].numero, pokedex[pokemonsPlayer].nome, pokedex[pokemonsPlayer].tipo1, pokedex[pokemonsPlayer].tipo2);
+
+
     return EXIT_SUCCESS;
     }
 

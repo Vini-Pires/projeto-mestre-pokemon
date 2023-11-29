@@ -4,7 +4,7 @@
 
 struct Pokemon {
     int numero, total, ataque, defesa, ataqueEspecial, defesaEspecial, velocidade, geracao;
-    char nome[50], tipo1[20], tipo2[20], cor[20];
+    char nome[51], tipo1[21], tipo2[21], cor[21];
     float altura, peso;
     int lendario, taxaCaptura, proximaEvolucao, preEvolucao;
 };
