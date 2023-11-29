@@ -1,9 +1,10 @@
-/* #include "pokedex.h"
+#include <stdio.h>
+#include "pokedex.h"
 
 //************************************************************************************
 
 void cadastrarPokemon(struct Pokemon *pokedex, int *numPokemons, FILE *file) {
-    if (*numPokemons < MAXIMO_DE_POKEMONS) {
+    if (*numPokemons < 721) {
         
         fscanf(file, "%d,%49[^,],%19[^,],%19[^,],%d,%d,%d,%d,%d,%d,%d,%d,%d,%19[^,],%f,%f,%d,%d,%d\n",
                &pokedex[*numPokemons].numero, pokedex[*numPokemons].nome, pokedex[*numPokemons].tipo1,
@@ -33,4 +34,4 @@ void listarPokemons(const struct Pokemon *pokedex, int numPokemons) {
         printf("Pokedex vazia. Nenhum Pokémon cadastrado.\n");
     }
 }
-*/
+
